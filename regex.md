@@ -55,3 +55,34 @@
 
 ## Python - re
 https://docs.python.org/3/howto/regex.html
+
+### Methods
+* match()
+  * group() - matched string
+  * start() - starting index
+  * end() - ending index
+  * span() - tuple of starting and ending index
+
+
+* search()
+* findall() - returns list
+* finditer() - returns iterator
+* sub()
+
+## Javascript - regex
+
+```
+regex = \...\
+```
+
+### Methods
+* test - `regex.test(string)` - true or false
+* match - `string.match(regex)` - extract matches
+* replace - `string.replace(regex, replacestring)` - find and replace
+
+### Flags
+```
+regex = \...\flags
+```
+* i - ignorecase
+* g - global - match more than once
