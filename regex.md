@@ -54,7 +54,6 @@
 `VERBOSE`, `X` - verbose regex, including comments  
 
 ## Python - re
-https://docs.python.org/3/howto/regex.html
 
 ### Methods
 * match()
@@ -86,3 +85,9 @@ regex = \...\flags
 ```
 * i - ignorecase
 * g - global - match more than once
+
+## References
+1. https://docs.python.org/3/howto/regex.html
+1. Wesley J. Chun, Core Python Programming 3rd edition, Chapter 1
+1. [Practice in HackerRank](https://www.hackerrank.com/domains/regex)
+1. [Practice in FreeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/)
