@@ -161,3 +161,98 @@ CASE
     ELSE result
 END;
 ```
+## Functions
+
+`COALESCE` in psql or `IFNULL` in sql
+- returns first non null value from arguments  
+- used to replace default value for null values
+```sql
+SELECT COALESCE (argument1, argument2, ...)
+SELECT IFNULL(argument1, argument2, ...)
+```
+
+## Joins
+
+* JOIN - (INNER) JOIN
+```sql
+SELECT column(s) FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+```
+
+* LEFT JOIN
+```sql
+SELECT column(s) FROM table1 LEFT JOIN table2 ON table1.column = table2.column;
+SELECT column(s) FROM table1 LEFT OUTER JOIN table2 ON table1.column = table2.column;
+```
+
+* RIGHT JOIN
+```sql
+SELECT column(s) FROM table1 RIGHT JOIN table2 ON table1.column = table2.column;
+SELECT column(s) FROM table1 RIGHT OUTER JOIN table2 ON table1.column = table2.column;
+```
+
+* FULL JOIN
+```sql
+SELECT column(s) FROM table1 FULL OUTER JOIN table2 ON table1.column = table2.column;
+```
+
+* CROSS JOIN
+```sql
+SELECT column(s) FROM table1 CROSS JOIN table2 ON table1.column = table2.column;
+```
+
+* Self join
+```sql
+SELECT column(s) FROM table1 T1, table1 T2 WHERE condition;
+```
+
+## Other select clauses
+
+`SELECT INTO` - copies data from one table into a new table
+```sql
+SELECT column(s) INTO newtable [IN externaldb] FROM oldtable WHERE condition;
+```
+
+`INSERT INTO SELECT` - copies data from one table into a another table
+```sql
+INSERT INTO table2 SELECT * FROM table1 WHERE condition;
+```
+
+## Procedure
+
+```sql
+CREATE PROCEDURE procedure_name AS sql_statement GO;
+EXEC procedure_name;
+```
+
+## Database Schema Manipulations
+`CREATE TABLE` - creates a new table
+```sql
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    columnN datatype,
+   ...
+);
+```
+
+Create table from existing table
+```sql
+CREATE TABLE new_table_name AS
+    SELECT column1, column2,...
+    FROM existing_table_name
+    WHERE ...;
+```
+
+`ALTER TABLE` - modifies a table
+```sql
+ALTER TABLE table_name ADD column_name datatype;
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE table_name MODIFY COLUMN column_name datatype;
+```
+
+`DROP TABLE` - deletes a table
+```sql
+DROP TABLE table_name;
+DROP DATABASE - drops existing database
+DROP DATABASE databasename
+```
