@@ -256,3 +256,67 @@ DROP TABLE table_name;
 DROP DATABASE - drops existing database
 DROP DATABASE databasename
 ```
+
+## SQLDB:
+
+`CREATE DATABASE` - creates a new database
+```sql
+CREATE DATABASE databasename;
+```
+
+`BACKUP DATABASE` - creates full backup of existing database
+```sql
+BACKUP DATABASE databasename TO DISK = 'filepath';
+```
+
+`differential` - backs up parts of database changed since last backup
+```sql
+BACKUP DATABASE databasename TO DISK = 'filepath' WITH DIFFERENTIAL;
+```
+
+`ALTER DATABASE` - modifies a database
+```sql
+ALTER TABLE table_name ALTER COLUMN column_name datatype;
+```
+
+`TRUNCATE` - delete data inside table, not table
+```sql
+TRUNCATE TABLE table_name;
+```
+
+`CREATE INDEX` - creates an index (search key)
+```sql
+DROP INDEX - deletes an index
+```
+
+## Constraints
+
+`NOT NULL` - Ensures that a column cannot have a NULL value  
+`UNIQUE` - Ensures that all values in a column are different  
+`PRIMARY KEY` - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table  
+
+`FOREIGN KEY` - Uniquely identifies a row/record in another table  
+`FOREIGN KEY (column) REFERENCES table(column)`
+
+`CHECK` - Ensures that all values in a column satisfies a specific condition  
+`DEFAULT` - Sets a default value for a column when no value is specified  
+`INDEX` - Used to create and retrieve data from the database very quickly  
+
+**Examples**
+```sql
+CREATE TABLE table_name (
+    column1 datatype constraint,
+    column2 datatype constraint,
+    column3 datatype constraint,
+    ...
+);
+
+ALTER TABLE table_name MODIFY COLUMN column_name datatype constraint;
+
+CREATE TABLE table_name (
+    column1 datatype constraint,
+    column2 datatype constraint,
+    CONSTRAINT column constraint (column1, column2, ...),
+    ...
+);
+```
