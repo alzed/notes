@@ -29,3 +29,40 @@
 !important > inline > id > class > tag
 ```
 based on order of declaration for same property
+
+## Properties
+`property: values`
+
+### Font
+* font-size
+* font-family
+* font-style
+* font-weight
+* line-height
+* width
+* opacity
+
+### Text
+* text-align: justify, center, right, left
+* text-decoration: underline, line-through
+* text-transform: lowercase, uppercase, capitalize, initial, inherit, none
+
+### Margin
+* margin: auto, center
+* margin-top
+* margin-left
+* margin-bottom
+* margin-right
+
+### Border
+* border-color
+* border-width
+* border-style
+* border-radius
+
+### Padding
+* padding
+* padding-top
+* padding-right
+* padding-bottom
+* padding-left
