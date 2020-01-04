@@ -66,3 +66,27 @@ based on order of declaration for same property
 * padding-right
 * padding-bottom
 * padding-left
+
+### Shadow
+box-shadow: offset-x, offset-y, blur-radius, spread-radius, color
+
+### Size:
+* px
+* %
+* em
+* rem
+* mm
+* in
+* vw - viewport width
+* vh - viewport height
+* vmin - viewport minimum
+* vmax - viewport maximum
+* fr
+
+### Position:
+* relative
+* absolute
+* fixed
+* sticky
+* float: left right top bottom
+* top, bottom, left, right - offset
