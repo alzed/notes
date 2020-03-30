@@ -4,6 +4,9 @@
 * matching  
 * repeated matching
 
+## Comments
+`(?#)` -> `(?#comment)`
+
 ## Metacharacters:
 ` . ^ * + ? { } [ ] \ | ( ) `
 
@@ -11,7 +14,8 @@
 `[ ]` -> set of characters to match -> `[abc]`  
  `-`  -> range of characters -> `[a-c]`  
  `^`  -> complement of characters -> `[^5]`  
- `\`  -> remove special meaning -> `\[` or `\^` or `\\`  
+ `\`  -> remove special meaning -> `\[` or `\^` or `\\`   
+
  `\w` -> all alphanumeric characters -> `[a-zA-Z0-9_]`  
  `\W` -> except all alphanumeric characters -> `[^a-zA-Z0-9_]`  
  `\d` -> all numeric characters -> `[0-9]`  
@@ -21,13 +25,14 @@
 `re.DOTALL` or `.` -> any character  
 . matches any character, to match `.`, escape with `\` as `\.`
 
-`|`  -> or operator  
-`^`  -> matches at the beginning of a line and following a \n  
-`$`  -> matches at the end of a line  
-`\A` -> only matches at the start of a string  
-`\Z` -> only matches at the end of a string  
-`\b` -> matches only at the beginning and end of a word (alphanumeric)  
-`\B` -> matches not at a word boundary
+`|`   -> or operator  
+`^`   -> matches at the beginning of a line and following a \n  
+`$`   -> matches at the end of a line  
+`\c`  -> matches any special character -> `\\ \*`
+`\A`  -> only matches at the start of a string  
+`\Z`  -> only matches at the end of a string  
+`\b`  -> matches only at the beginning and end of a word (alphanumeric)  
+`\B`  -> matches not at a word boundary  
 
 ## Repeating
 `*` -> matches characters 0 or more times instead of once  
@@ -39,11 +44,26 @@
 `?` -> 0 or 1 time  
 `ca?t` - ct, cat
 
-`{m,n}` - atleast m to atmost n - m,n - decimal integers  
+`{n}` -> match exactly n occurences - n - decimal integer  
+`ca{3}t` - caaat  
+
+`{m,n}` -> atleast m to atmost n - m,n - decimal integers  
 `ca{1,3}t` - cat, caat, caaat  
+
+`(*|+|?|{})?` -> non-greedy versions of symbols (\*,+,?,{}) -> `[a-c]*?`  
 
 ## Grouping
 `( )` -> group expressions  
+`\N`  -> match Nth subgroup
+`(?iLmsux)` - embed flags within regex  
+`(?:)` -> non saved groups  
+`(?P<name>)` -> identify group with name  
+`(?P=name)` -> match group by name  
+`(?=)`  -> matches if comes next, positive lookahead assertion -> `(?=.com)`
+`(?!)`  -> matches if doesn't come next, negative lookahead assertion -> `(?!for)`  
+`(?<=)` -> matches if comes prior, positive lookbehind assertion -> `(?<=def)`  
+`(?<!)` -> matches if doesn't come prior, negative lookbehind assertion -> `(?<!.net)`
+`(?(id/name)Y|N)` -> conditional or ternary match, N is optional -> `(?(1)y|x)`  
 
 ## Compilation Flags
 `ASCII`, `A` - match only ascii with `\w`, `\b`, `\s`, `\d`  
@@ -51,22 +71,33 @@
 `IGNORECASE`, `I` - case-insensitive matches  
 `LOCALE`, `L` - Include locale based characters  
 `MULTILINE`, `M` - multiline matching  
-`VERBOSE`, `X` - verbose regex, including comments  
+`VERBOSE`, `X` - verbose regex, including comments    
 
 ## Python - re
 
+match - matches from the beginning of a string
+search - searches for the pattern anywhere in the starting and returns the first occurence
+
 ### Methods
-* match()
-  * group() - matched string
-  * start() - starting index
-  * end() - ending index
-  * span() - tuple of starting and ending index
+* `compile(pattern, flags=0)` - return regex object  
 
+* `match(pattern, string, flags=0)` - return match object or None
+* `group(num=0)` - return matched string
+* `groups()` - return all matched subgroups in tuple
+* `groupdict()` - return all matched subgroups in dict (key-names)
+* `start()` - starting index
+* `end()` - ending index
+* `span()` - tuple of starting and ending index
 
-* search()
-* findall() - returns list
-* finditer() - returns iterator
-* sub()
+* `search(pattern, string, flags=0)` - return match object or None
+* `findall(pattern, string[,flags])` - returns list of matches
+* `finditer(pattern, string[,flags])` - returns iterator match object
+* `split(pattern, string, max=0)` - split string according to pattern max times, return matches
+* `sub(pattern, repl, string, count=0)` - replace with repl return number of substitutions  
+* `subn(pattern, repl, string, count=0)` - as sub and return total number of substitutions  
+* `purge()` - purge compiled cache
+
+(multiple flags in methods - `|`)
 
 ## Javascript - regex
 
