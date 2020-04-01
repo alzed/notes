@@ -2,7 +2,7 @@
 
 ## Functions
 * matching  
-* repeated matching
+* searching
 
 ## Comments
 `(?#)` -> `(?#comment)`
@@ -59,6 +59,8 @@
 `(?:)` -> non saved groups  
 `(?P<name>)` -> identify group with name  
 `(?P=name)` -> match group by name  
+`(?g<name>)` -> retrieve named groups saved by ?P  
+
 `(?=)`  -> matches if comes next, positive lookahead assertion -> `(?=.com)`
 `(?!)`  -> matches if doesn't come next, negative lookahead assertion -> `(?!for)`  
 `(?<=)` -> matches if comes prior, positive lookbehind assertion -> `(?<=def)`  
@@ -72,6 +74,7 @@
 `LOCALE`, `L` - Include locale based characters  
 `MULTILINE`, `M` - multiline matching  
 `VERBOSE`, `X` - verbose regex, including comments    
+`UNICODE`, `U` - match unicode characters  
 
 ## Python - re
 
@@ -93,11 +96,18 @@ search - searches for the pattern anywhere in the starting and returns the first
 * `findall(pattern, string[,flags])` - returns list of matches
 * `finditer(pattern, string[,flags])` - returns iterator match object
 * `split(pattern, string, max=0)` - split string according to pattern max times, return matches
-* `sub(pattern, repl, string, count=0)` - replace with repl return number of substitutions  
+* `sub(pattern, repl, string, count=0)` - replace pattern with repl in string
 * `subn(pattern, repl, string, count=0)` - as sub and return total number of substitutions  
 * `purge()` - purge compiled cache
 
+### Compilation flags
 (multiple flags in methods - `|`)
+* `re.I` -> IGNORECASE
+* `re.M` -> MULTILINE  
+* `re.S` -> DOTALL  
+* `re.X` -> VERBOSE  
+* `re.L` -> LOCALE  
+* `re.U` -> UNICODE  
 
 ## Javascript - regex
 
