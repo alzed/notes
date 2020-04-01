@@ -88,9 +88,9 @@
 * `group(num=0)` - return matched string
 * `groups()` - return all matched subgroups in tuple
 * `groupdict()` - return all matched subgroups in a dictionary (key-names)
-* `start()` - starting index
-* `end()` - ending index
-* `span()` - tuple of starting and ending index
+* `start()` - return starting index
+* `end()` - return ending index
+* `span()` - return tuple of starting and ending index
 
 * `search(pattern, string, flags=0)` - return match object or None
 * `findall(pattern, string[,flags])` - returns list of matches
