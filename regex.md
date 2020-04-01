@@ -53,7 +53,7 @@
 `{m,n}` - at least m to at most n - m,n - decimal integers  
 `ca{1,3}t` - cat, caat, caaat  
 
-`(*|+|?|{})?` - non-greedy versions of symbols (\*,+,?,{}) -> `[a-c]*?`  
+`(*|+|?|{})?` - non-greedy (consume less characters as possible) versions of symbols (\*,+,?,{}) -> `[a-c]*?`  
 
 ## Grouping
 `( )` - group expressions  
