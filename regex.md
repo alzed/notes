@@ -26,7 +26,7 @@
 `\s` -> all whitespace characters -> `[ \t\n\r\f\v]`   
 `\S` -> except all whitespace characters -> `[^ \t\n\r\f\v]`  
 `re.DOTALL` or `.` -> any character  
-. matches any character, to match `.`, escape with `\` as `\.`
+`.` matches any character, to match `.` character, escape with `\` -> `\.`
 
 `|`   -> or operator  
 `^`   -> matches at the beginning of a line and following a \n  
