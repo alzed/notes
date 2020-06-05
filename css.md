@@ -1,6 +1,7 @@
 # CSS
 
 ## CSS types
+
 * style property - **inline css**
 * style tag - **internal css**
 * css file - **external css**
@@ -9,31 +10,36 @@
 
 * tag as such
 * class start with .
-* id start with #
+* id start with \#
 * many classes under class separated by space
-* [type='attr']
+* \[type='attr'\]
 
 ### Variables
+
 * start with --
-* assignment - var(--variable name)
+* assignment - var\(--variable name\)
 
 ### Pseudo class selector
 
 * :root
-* <tag>:hover
-* <tag>::before
-* <tag>::after
+* :hover
+* ::before
+* ::after
 
 ### Order of precedence
-```
+
+```text
 !important > inline > id > class > tag
 ```
+
 based on order of declaration for same property
 
 ## Properties
+
 `property: values`
 
 ### Font
+
 * font-size
 * font-family
 * font-style
@@ -43,11 +49,13 @@ based on order of declaration for same property
 * opacity
 
 ### Text
+
 * text-align: justify, center, right, left
 * text-decoration: underline, line-through
 * text-transform: lowercase, uppercase, capitalize, initial, inherit, none
 
 ### Margin
+
 * margin: auto, center
 * margin-top
 * margin-left
@@ -55,12 +63,14 @@ based on order of declaration for same property
 * margin-right
 
 ### Border
+
 * border-color
 * border-width
 * border-style
 * border-radius
 
 ### Padding
+
 * padding
 * padding-top
 * padding-right
@@ -68,9 +78,11 @@ based on order of declaration for same property
 * padding-left
 
 ### Shadow
+
 box-shadow: offset-x, offset-y, blur-radius, spread-radius, color
 
 ### Size:
+
 * px
 * %
 * em
@@ -84,9 +96,11 @@ box-shadow: offset-x, offset-y, blur-radius, spread-radius, color
 * fr
 
 ### Position:
+
 * relative
 * absolute
 * fixed
 * sticky
 * float: left right top bottom
 * top, bottom, left, right - offset
+
