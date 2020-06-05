@@ -1,8 +1,8 @@
 ---
-description: Regex and methods in Python and Javascript
+description: Regular expressions and methods in Python and Javascript
 ---
 
-# Regular expressions
+# Regex
 
 ## Functions
 
