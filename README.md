@@ -1,2 +1,6 @@
-# Initial page
+---
+description: My notes on computer science and math.
+---
+
+# Notes
 
