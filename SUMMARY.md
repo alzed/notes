@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Notes](README.md)
-* [Regular expressions](regular-expressions.md)
+* [Regular expressions](regex.md)
 * [SQL](sql.md)
+* [HTML](html.md)
 
