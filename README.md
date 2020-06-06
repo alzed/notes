@@ -4,15 +4,12 @@ description: My notes on computer science and math.
 
 # Notes
 
-View on [Gitbook](https://alzed.gitbook.io/notes/)
+View in [Gitbook](https://alzed.gitbook.io/notes/)
 
-{% page-ref page="regex.md" %}
+My notes on the following topics
 
-{% page-ref page="sql.md" %}
-
-{% page-ref page="html.md" %}
-
-{% page-ref page="css.md" %}
-
-
+* Regex
+* SQL
+* HTML
+* CSS
 

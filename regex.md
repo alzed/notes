@@ -1,4 +1,4 @@
-# Regular expressions
+# Regex
 
 ## Functions
 
