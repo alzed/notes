@@ -375,3 +375,8 @@ CREATE TABLE table_name (
 );
 ```
 
+### References
+
+1. [https://sqlbolt.com/](https://sqlbolt.com/)
+2. [https://sqlzoo.net/](https://sqlzoo.net/)
+
